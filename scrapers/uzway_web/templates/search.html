@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Search routes — UzWay Ops{% endblock %}
+{% block content %}
+<div class="page-head">
+  <h1 class="page-title">Search routes</h1>
+  <p class="page-subtitle">Runs route_engine.py's own query parser and itinerary search against the scraped schedule database. Ask in plain English, Uzbek, or Russian.</p>
+</div>
+
+<div class="panel">
+  <div class="field">
+    <label for="question">Where do you want to go?</label>
+    <input type="text" id="question" placeholder='e.g. "Tashkent to Bukhara, cheapest" or "Nukus to Kashkadarya, 2kg baggage"'>
+  </div>
+  <div class="field-row">
+    <div class="field" style="max-width:220px;">
+      <label for="max_legs">Max legs (changes + 1)</label>
+      <select id="max_legs">
+        <option value="1">Direct only</option>
+        <option value="2" selected>Up to 1 change</option>
+        <option value="3">Up to 2 changes</option>
+      </select>
+    </div>
+    <div class="field" style="align-self:flex-end; max-width:180px;">
+      <button class="btn btn-primary" id="search-btn" style="width:100%;">Search</button>
+    </div>
+  </div>
+  <div class="examples">
+    <span class="example-chip" data-q="Tashkent to Bukhara, cheapest">Tashkent → Bukhara, cheapest</span>
+    <span class="example-chip" data-q="Nukus to Kashkadarya, 2kg baggage">Nukus → Kashkadarya, 2kg baggage</span>
+    <span class="example-chip" data-q="Tashkent to Samarkand tomorrow, fastest">Tashkent → Samarkand tomorrow, fastest</span>
+    <span class="example-chip" data-q="Tashkent to Andijan with 2 person more">Tashkent → Andijan, +2 people</span>
+  </div>
+</div>
+
+<div id="results" style="margin-top:18px;"></div>
+
+<div class="panel" id="console-panel" style="display:none; margin-top:16px;">
+  <div class="panel-title">Raw console output (what route_engine.py would print)</div>
+  <div class="console" id="console-out"></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/search.js"></script>
+{% endblock %}

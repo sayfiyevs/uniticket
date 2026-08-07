@@ -1,0 +1,108 @@
+<InitMainVars>
+PS_DIRECTORY ** Not Set ** 
+ argv[0] is 'C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\dsrc\x86e_win64\obj\ptcsetup.exe'
+ Try to figure it out now 
+ Path1 NOW: C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\dsrc\x86e_win64\obj\ptcsetup.exe
+Now look for: C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\dsrc\text\compiled_resource\ps_default_resources.dll
+Found C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\dsrc\text\compiled_resource\ps_default_resources.dll
+ Resource file exists at: C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\dsrc\text\compiled_resource\ps_default_resources.dll
+ So, set PS_DIRECTORY to: C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\dsrc
+PTC_CDHOME ** Not Set ** 
+Now look for: C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\ptc_inst\cdmaster.ptc
+ So, set PTC_CDHOME to: C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a
+<PsGetVar> Failed for: PTC_CDHOME
+DPS_DIRECTORY ** Not Set ** 
+ So, set DPS_DIRECTORY to: C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\dsrc
+DONE <InitMainVars>
+<PsCd::PsCd> (C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a)
+<PsGetVar> Failed for: PS_INF_PATH
+<PsGetVar> Failed for: PS_INF_FILE
+ptc_inf_path: C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\ptc_inst\ptc.inf
+<PsGetVar> Failed for: PS_ARCH_DB
+<PsInfFile::ReadInf> 'C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\ptc_inst\ptc.inf'
+PsCD::LoadSummary
+PsInfFile::ReadInf ignoreCluster = 1
+Start of ReadInf time stamp: Sun Mar 02 13:03:45 West Asia Standard Time 2025
+End of ReadInf time stamp: Sun Mar 02 13:03:45 West Asia Standard Time 2025
+Init Translation/Message system
+
+ ---------------------------------- 
+ |      Welcome to PTC.Setup      | 
+ ---------------------------------- 
+ Time: Sun Mar 02 13:03:45 West Asia Standard Time 2025
+ Could not get DomainName 
+ Host: sardor
+ Machine type: x86e_win64
+ User: sardorbek
+ CurDir: C:\windows\system32
+ PTC.Setup build info: Oct 21 2015 08:51:36
+ get_internal_version(): L-03-62
+ --------------------------------------------
+
+<PsGetVar> Failed for: PS_CDMASTER
+<PsCd::readResfile> cdmaster.ptc
+<PsCd::addProduct> (mathcad)
+    <PsInstall::PsInstall> loadpoint: 
+    <PsInstall::Refresh> Path: ''
+Returning from PsInstall::Refresh because Path.IsEmpty
+<PsProduct::SetLoadpoint> new loadpoint: 
+ConvertDBAdd __PSF_COMMENT__ '//'
+<PsProduct::readResfile> C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\ptc_inst\mathcad.ptc
+<PsCd::addProduct> (flexlm)
+    <PsInstall::PsInstall> loadpoint: 
+    <PsInstall::Refresh> Path: ''
+Returning from PsInstall::Refresh because Path.IsEmpty
+<PsProduct::SetLoadpoint> new loadpoint: 
+ConvertDBAdd __PSF_COMMENT__ '//'
+<PsProduct::readResfile> C:\Users\sardorbek\AppData\Local\Temp\a334f8f6-43f2-4297-b0e7-1b7ce42af96a_Mathcad15.rar.96a\ptc_inst\flexlm.ptc
+PsPackage:: Setting up ezActions for pkg: uninstall
+PsPackage:: Setting up ezActions for pkg: ptcutil
+current flexver: 6.1
+default flexver: 6.1
+set_unihttp CB to PsDownloadAuth
+ClickWrapLA: clickwrap_la
+set_unihttp CB to PsDownloadAuth
+ConvertDBAdd __HOSTID__ '60-45-2E-95-07-22'
+ConvertDBAdd __PRODUCT__ 'Mathcad'
+ConvertDBAdd __RELNUM__ '15.0'
+ConvertDBAdd __DCODE__ 'M050'
+<SetDlgBrowse> ScreenStudentLic.StudentLicFileBrowse - ScreenStudentLic.StudentLicFile type:2
+DirList.GetSize() = 23
+Generic InitFunc: ScreenDftCmds
+PsSetCompVal failed for ScreenServlet
+BEGIN ScreenWebPub::InitFunc()
+<LpcfgDcadCmd::InitFunc>
+ConvertDBAdd __WEBBROWSER__ 'netscape'
+Setup ScreenWelcome
+ScreenWelcome::DisplayLA - CountrySelected: 
+Which License Agreement will we display: clickwrap_la
+The Current UI Language: usascii
+License Agreement Found: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\dsrc\text\usascii\clickwrap_la.txt
+pushed is product btnScreenWelcome.ProdButton.0
+ScreenWelcome PostFunc Dir = 1
+ConvertDBAdd __INSTBLE__ 'Mathcad'
+ConvertDBAdd __PRODUCT__ 'Mathcad'
+ScreenWelcome Product::PreCheck for: Mathcad
+PsProductMathcad_precheck called.
+Testing for PreReq .NET 3.5 SP 1 
+PsDotNetFrameworkInstalled: not found : v3.5
+main_dlg->Activate FAILED!
+STATUS my_main: 0
+Raise Error DialogMicrosoft .NET Framework 3.5 SP1 was not found on your system. It is required in order to complete the installation of Mathcad.  You can download and install the required version of .NET by visiting
+Testing for PreReq IE >= 5.0 
+                   IE == 9.11.22621.0
+Testing for PreReq MSXML 6 
+ Major version of C:\windows\system32\msxml3.dll is 8
+ Major version of C:\windows\system32\msxml3r.dll is 8
+ Major version of C:\windows\system32\msxml6.dll is 6
+ MSXML dll version 6.* criteria matched. 
+Search criteria matches MSXML  
+msi.dll Version == 5.0
+Testing for PreReq Acrobat Reader
+Raise Error DialogIn order to view the PDF documentation provided for Mathcad 15, you must have Adobe Acrobat Reader installed on your system.
+Click the link below to download an Acrobat installer of your choice.
+IsVista() returning = 0
+Marking as Windows7 because we found SetCurentProcessExplicitAppUserModelID()
+IsWindows7() returning = 1
+main_dlg->Activate FAILED!
+STATUS my_main: 0

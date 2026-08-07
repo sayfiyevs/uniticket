@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — UzWay Ops{% endblock %}
+{% block content %}
+<div class="page-head">
+  <h1 class="page-title">Dashboard</h1>
+  <p class="page-subtitle">Live state of the schedule database, read straight from atto_horizon.json and backfill_progress.json — the same files the scripts themselves use.</p>
+</div>
+
+<div class="grid-3">
+  <div class="stat-tile">
+    <div class="stat-value">{{ state.days_ahead if state.days_ahead is not none else '—' }}</div>
+    <div class="stat-label">Days of booking horizon discovered
+      {% if state.horizon_age_hours is not none %}· last scan {{ state.horizon_age_hours }}h ago{% endif %}
+    </div>
+  </div>
+  <div class="stat-tile">
+    <div class="stat-value teal">{{ state.backfill_done }}</div>
+    <div class="stat-label">Flight route/date pairs backfilled
+      {% if state.backfill_repaired %}· repaired{% endif %}
+    </div>
+  </div>
+  <div class="stat-tile">
+    <div class="stat-value">{{ state.cities|length }}</div>
+    <div class="stat-label">Known destination cities</div>
+  </div>
+</div>
+
+<div class="panel" style="margin-top:16px;">
+  <div class="panel-title">Backfill progress by destination city</div>
+  {% if state.backfill_by_city %}
+  {% set maxc = state.backfill_by_city.values()|list|max %}
+  <table class="bar-table">
+    {% for city, count in state.backfill_by_city.items() %}
+    <tr>
+      <td class="city-name">{{ city }}</td>
+      <td class="bar-cell"><div class="bar-track"><div class="bar-fill" style="width:{{ (count/maxc*100)|round(1) }}%"></div></div></td>
+      <td class="count">{{ count }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p class="help-text">No backfill progress recorded yet — run it from the Backfill Flights page.</p>
+  {% endif %}
+</div>
+
+<div class="grid-2" style="margin-top:16px;">
+  <div class="panel">
+    <div class="panel-title">Quick actions</div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <a class="btn" href="/search">Search a route →</a>
+      <a class="btn" href="/pipelines">Run a scraper pipeline →</a>
+      <a class="btn" href="/backfill">Continue flight backfill →</a>
+      <a class="btn" href="/network">Collect connecting routes →</a>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-title">About this state</div>
+    <p class="help-text" style="font-size:12.5px; line-height:1.6;">
+      <strong>Horizon</strong> is how many days ahead ATTO actually has bookable inventory —
+      discovered by walking forward day-by-day until service stops appearing.<br><br>
+      <strong>Backfill</strong> tracks which (destination, date) flight searches have already
+      been scraped, so re-runs skip work that's already done.
+    </p>
+  </div>
+</div>
+{% endblock %}

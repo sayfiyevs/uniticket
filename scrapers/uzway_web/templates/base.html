@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}UzWay Ops{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">UZWAY // OPS</div>
+      <div class="brand-sub">Uzbekistan route network</div>
+    </div>
+    <nav class="nav">
+      <a href="/" class="{{ 'active' if request.path == '/' }}"><span class="dot"></span>Dashboard</a>
+      <a href="/search" class="{{ 'active' if request.path == '/search' }}"><span class="dot"></span>Search routes</a>
+    </nav>
+    <div class="nav-section-label">Data collection</div>
+    <nav class="nav">
+      <a href="/pipelines" class="{{ 'active' if request.path == '/pipelines' }}"><span class="dot"></span>Pipelines</a>
+      <a href="/backfill" class="{{ 'active' if request.path == '/backfill' }}"><span class="dot"></span>Backfill flights</a>
+      <a href="/network" class="{{ 'active' if request.path == '/network' }}"><span class="dot"></span>Collect network</a>
+    </nav>
+    <div class="nav-section-label">Maintenance</div>
+    <nav class="nav">
+      <a href="/diagnose" class="{{ 'active' if request.path == '/diagnose' }}"><span class="dot"></span>Diagnose</a>
+      <a href="/repair" class="{{ 'active' if request.path == '/repair' }}"><span class="dot"></span>Repair progress</a>
+      <a href="/settings" class="{{ 'active' if request.path == '/settings' }}"><span class="dot"></span>Settings</a>
+    </nav>
+  </aside>
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
+</div>
+<script src="/static/js/app.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

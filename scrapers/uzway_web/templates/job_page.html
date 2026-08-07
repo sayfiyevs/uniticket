@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} — UzWay Ops{% endblock %}
+{% block content %}
+<div class="page-head">
+  <h1 class="page-title">{{ title }}</h1>
+  <p class="page-subtitle">{{ subtitle }}</p>
+</div>
+
+<div class="job-runner panel" data-kind="{{ job_kind }}">
+  {% if show_network_form %}
+  <div class="field-row">
+    <div class="field">
+      <label>Days ahead (blank = full discovered horizon)</label>
+      <input type="number" class="field-days" min="1" placeholder="{{ state.days_ahead or 25 }}">
+    </div>
+    <div class="field">
+      <label>Cities (comma-separated, blank = all)</label>
+      <input type="text" class="field-cities" placeholder="Tashkent,Samarkand,Bukhara">
+    </div>
+    <div class="field">
+      <label>Hub-only (comma-separated, optional)</label>
+      <input type="text" class="field-hubs" placeholder="Tashkent,Samarkand">
+    </div>
+  </div>
+  <p class="help-text" style="margin-bottom:14px;">Hub-restricting cuts the request count by more than half — most real connections route through a handful of hubs anyway.</p>
+  {% endif %}
+
+  <div class="job-toolbar">
+    <button class="btn btn-primary run-btn">Run {{ title }}</button>
+    <button class="btn btn-danger stop-btn" style="display:none;">Stop</button>
+    <span class="chip job-chip"><span class="dot"></span>idle</span>
+  </div>
+  <div class="console job-console"></div>
+</div>
+{% endblock %}

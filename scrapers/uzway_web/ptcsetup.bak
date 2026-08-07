@@ -1,0 +1,76 @@
+<InitMainVars>
+PS_DIRECTORY ** Not Set ** 
+ argv[0] is 'C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\dsrc\x86e_win64\obj\ptcsetup.exe'
+ Try to figure it out now 
+ Path1 NOW: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\dsrc\x86e_win64\obj\ptcsetup.exe
+Now look for: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\dsrc\text\compiled_resource\ps_default_resources.dll
+Found C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\dsrc\text\compiled_resource\ps_default_resources.dll
+ Resource file exists at: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\dsrc\text\compiled_resource\ps_default_resources.dll
+ So, set PS_DIRECTORY to: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\dsrc
+PTC_CDHOME ** Not Set ** 
+Now look for: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\ptc_inst\cdmaster.ptc
+ So, set PTC_CDHOME to: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf
+<PsGetVar> Failed for: PTC_CDHOME
+DPS_DIRECTORY ** Not Set ** 
+ So, set DPS_DIRECTORY to: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\dsrc
+DONE <InitMainVars>
+<PsCd::PsCd> (C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf)
+<PsGetVar> Failed for: PS_INF_PATH
+<PsGetVar> Failed for: PS_INF_FILE
+ptc_inf_path: C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\ptc_inst\ptc.inf
+<PsGetVar> Failed for: PS_ARCH_DB
+<PsInfFile::ReadInf> 'C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\ptc_inst\ptc.inf'
+PsCD::LoadSummary
+PsInfFile::ReadInf ignoreCluster = 1
+Start of ReadInf time stamp: Sun Mar 02 13:03:42 West Asia Standard Time 2025
+End of ReadInf time stamp: Sun Mar 02 13:03:42 West Asia Standard Time 2025
+Init Translation/Message system
+
+ ---------------------------------- 
+ |      Welcome to PTC.Setup      | 
+ ---------------------------------- 
+ Time: Sun Mar 02 13:03:42 West Asia Standard Time 2025
+ Could not get DomainName 
+ Host: sardor
+ Machine type: x86e_win64
+ User: sardorbek
+ CurDir: C:\windows\system32
+ PTC.Setup build info: Oct 21 2015 08:51:36
+ get_internal_version(): L-03-62
+ --------------------------------------------
+
+<PsGetVar> Failed for: PS_CDMASTER
+<PsCd::readResfile> cdmaster.ptc
+<PsCd::addProduct> (mathcad)
+    <PsInstall::PsInstall> loadpoint: 
+    <PsInstall::Refresh> Path: ''
+Returning from PsInstall::Refresh because Path.IsEmpty
+<PsProduct::SetLoadpoint> new loadpoint: 
+ConvertDBAdd __PSF_COMMENT__ '//'
+<PsProduct::readResfile> C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\ptc_inst\mathcad.ptc
+<PsCd::addProduct> (flexlm)
+    <PsInstall::PsInstall> loadpoint: 
+    <PsInstall::Refresh> Path: ''
+Returning from PsInstall::Refresh because Path.IsEmpty
+<PsProduct::SetLoadpoint> new loadpoint: 
+ConvertDBAdd __PSF_COMMENT__ '//'
+<PsProduct::readResfile> C:\Users\sardorbek\AppData\Local\Temp\6f7d4876-0ded-4fd4-8da7-16d01ad6a6cf_Mathcad15.rar.6cf\ptc_inst\flexlm.ptc
+PsPackage:: Setting up ezActions for pkg: uninstall
+PsPackage:: Setting up ezActions for pkg: ptcutil
+current flexver: 6.1
+default flexver: 6.1
+set_unihttp CB to PsDownloadAuth
+ClickWrapLA: clickwrap_la
+set_unihttp CB to PsDownloadAuth
+ConvertDBAdd __HOSTID__ '60-45-2E-95-07-22'
+ConvertDBAdd __PRODUCT__ 'Mathcad'
+ConvertDBAdd __RELNUM__ '15.0'
+ConvertDBAdd __DCODE__ 'M050'
+<SetDlgBrowse> ScreenStudentLic.StudentLicFileBrowse - ScreenStudentLic.StudentLicFile type:2
+DirList.GetSize() = 23
+Generic InitFunc: ScreenDftCmds
+PsSetCompVal failed for ScreenServlet
+BEGIN ScreenWebPub::InitFunc()
+<LpcfgDcadCmd::InitFunc>
+ConvertDBAdd __WEBBROWSER__ 'netscape'
+Setup ScreenWelcome

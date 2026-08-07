@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Pipelines — UzWay Ops{% endblock %}
+{% block content %}
+<div class="page-head">
+  <h1 class="page-title">Pipelines</h1>
+  <p class="page-subtitle">
+    On-demand triggers for the individual functions in atto_scraper.py. Its own <code>__main__</code>
+    runs these forever on a schedule (a background daemon) — this page runs each one once, so you can
+    watch it work instead of leaving a terminal open.
+  </p>
+</div>
+
+<div class="job-runner panel" data-kind="pipeline" data-pipeline="discover_horizon">
+  <div class="panel-title">Discover horizon</div>
+  <p class="help-text" style="margin-bottom:14px;">Walks forward day by day to find how far ahead bookings actually exist. Expensive — run once a day. Currently: {{ state.days_ahead or '—' }} days.</p>
+  <div class="job-toolbar">
+    <button class="btn btn-primary run-btn">Run</button>
+    <button class="btn btn-danger stop-btn" style="display:none;">Stop</button>
+    <span class="chip job-chip"><span class="dot"></span>idle</span>
+  </div>
+  <div class="console job-console"></div>
+</div>
+
+<div class="job-runner panel" data-kind="pipeline" data-pipeline="ground_pipeline">
+  <div class="panel-title">Ground pipeline (trains + buses)</div>
+  <p class="help-text" style="margin-bottom:14px;">Fast, single request per route. Safe to run often.</p>
+  <div class="job-toolbar">
+    <button class="btn btn-primary run-btn">Run</button>
+    <button class="btn btn-danger stop-btn" style="display:none;">Stop</button>
+    <span class="chip job-chip"><span class="dot"></span>idle</span>
+  </div>
+  <div class="console job-console"></div>
+</div>
+
+<div class="job-runner panel" data-kind="pipeline" data-pipeline="flight_pipeline_near">
+  <div class="panel-title">Flight pipeline — near-term (4 days)</div>
+  <p class="help-text" style="margin-bottom:14px;">Prices move most close to departure — meant to run several times a day.</p>
+  <div class="job-toolbar">
+    <button class="btn btn-primary run-btn">Run</button>
+    <button class="btn btn-danger stop-btn" style="display:none;">Stop</button>
+    <span class="chip job-chip"><span class="dot"></span>idle</span>
+  </div>
+  <div class="console job-console"></div>
+</div>
+
+<div class="job-runner panel" data-kind="pipeline" data-pipeline="flight_pipeline_full">
+  <div class="panel-title">Flight pipeline — full horizon</div>
+  <p class="help-text" style="margin-bottom:14px;">Every bookable day. Slow — can take hours. Normally runs once overnight.</p>
+  <div class="job-toolbar">
+    <button class="btn btn-primary run-btn">Run</button>
+    <button class="btn btn-danger stop-btn" style="display:none;">Stop</button>
+    <span class="chip job-chip"><span class="dot"></span>idle</span>
+  </div>
+  <div class="console job-console"></div>
+</div>
+{% endblock %}

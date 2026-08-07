@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local state — must not be deployed or committed
+backfill_progress.json
+atto_horizon.json
+
+# Contains your ATTO access token
+web_settings.json

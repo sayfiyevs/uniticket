@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Settings — UzWay Ops{% endblock %}
+{% block content %}
+<div class="page-head">
+  <h1 class="page-title">Settings</h1>
+  <p class="page-subtitle">The ATTO access token is not self-refreshing — copy a fresh one from your browser's DevTools (Network tab, any request to tickets.atto.uz) when scraping starts failing.</p>
+</div>
+
+<div class="panel" style="max-width:560px;">
+  <div class="panel-title">ATTO access token</div>
+  <div class="field">
+    <label for="token">access_token header value</label>
+    <input type="password" id="token" value="{{ settings.access_token or '' }}" placeholder="paste token from DevTools">
+  </div>
+  <button class="btn btn-primary" id="save-btn">Save</button>
+  <span id="save-status" class="help-text" style="margin-left:10px;"></span>
+  <p class="help-text" style="margin-top:14px;">
+    Stored in <code>web_settings.json</code> next to the scripts, and passed to every scraping job as the
+    <code>ATTO_ACCESS_TOKEN</code> environment variable. Leave blank to fall back to whatever's hardcoded
+    in <code>atto_scraper.py</code>.
+  </p>
+</div>
+
+<div class="panel" style="max-width:560px; margin-top:16px;">
+  <div class="panel-title">Database</div>
+  <p class="help-text">
+    Both atto_scraper.py and route_engine.py connect to a local SQL Server instance
+    (<code>DESKTOP-5K5RC72\\UzWayDB</code>) using Windows integrated authentication — this app must run
+    on that machine, or its domain, with ODBC Driver 17 for SQL Server installed. Edit the
+    <code>DB_CONNECTION_STRING</code> constant at the top of both files to point elsewhere.
+  </p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+document.getElementById('save-btn').addEventListener('click', async () => {
+  const status = document.getElementById('save-status');
+  status.textContent = 'Saving…';
+  const resp = await fetch('/api/settings', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ access_token: document.getElementById('token').value })
+  });
+  status.textContent = resp.ok ? 'Saved.' : 'Failed to save.';
+  setTimeout(() => status.textContent = '', 2000);
+});
+</script>
+{% endblock %}
