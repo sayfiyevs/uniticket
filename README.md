@@ -105,34 +105,7 @@ number alone collapsed them and kept an arbitrary one.
 
 ---
 
-## Running it locally
 
-Requires Python 3.11, SQL Server with ODBC Driver 17, and a valid ATTO
-access token.
-
-```bash
-pip install -r requirements.txt
-python app.py
-```
-
-Open `http://127.0.0.1:5000`.
-
-The local build includes an operations console — trigger collection jobs,
-watch their output stream live, inspect the horizon and backfill state.
-That surface is disabled in the deployed copy.
-
-### Deployed mode
-
-```bash
-UZWAY_PUBLIC=1              # search only; every job route returns 404
-UZWAY_DB=sqlite:///uzway.db # read the snapshot instead of SQL Server
-```
-
-The public deployment reads a SQLite snapshot rather than a live database,
-so it shows data as of the last export. Refresh by re-running
-`export_to_sqlite.py` and redeploying.
-
----
 
 ## Known limitations (as it is just a prototype)
 
